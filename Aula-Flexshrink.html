@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Flex-Shrink</title>
+    <style>
+        
+        .flex-container{
+            border: 1px solid black;
+            max-width: 350px;
+            display: flex;            
+        }
+
+        .itens{
+            margin: 5px;
+            background-color: chocolate;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .s-0{
+            flex-shrink: 0 ;
+            flex-basis: 100px;
+        }
+
+        .s-2{
+            flex-shrink: 2 ;
+            flex-basis: 100px;
+        }
+
+        .s-3{
+            flex-shrink: 3 ;   
+            flex-basis: 100px;        
+        }
+
+        .s-1{
+            flex-shrink: 1;
+        }
+        
+        .fg-1{
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <p>Flex-Shrink: 1</p>
+    <div class="flex-container">
+        <div class="itens s-1 fg-1">A</div>
+        <div class="itens s-1 fg-1">B</div>
+        <div class="itens s-1 fg-1">C</div>
+        <div class="itens s-1 fg-1">D</div>
+        <div class="itens s-1 fg-1">E</div>
+    </div>
+
+    <p>Flex-Shrink: 1 com itens em tamanhos diferentes</p>
+    <div class="flex-container">
+        <div class="itens s-1 fg-1">A</div>
+        <div class="itens s-1 fg-1">Sed nec rhoncus massa.</div>
+        <div class="itens s-1 fg-1">C</div>
+        <div class="itens s-1 fg-1">D</div>        
+    </div>
+
+    <P>Flex-Shrink: 0 / Basis: 100px</P>
+    <div class="flex-container">
+        <div class="itens s-0 fg-1">A</div>
+        <div class="itens s-0 fg-1">Sed nec rhoncus.</div>
+        <div class="itens s-0 fg-1">C nec rhoncus</div>
+        <div class="itens s-0 fg-1">D  nec rhoncus</div> 
+        <div class="itens s-0 fg-1">D</div>        
+    </div>
+
+    <P>Flex-Shrink: mix / Basis: 100px</P>
+    <div class="flex-container">
+        <div class="itens s-1 fg-1">A</div>
+        <div class="itens s-2 fg-1">Sed nec rhoncus massa.</div>
+        <div class="itens s-2 fg-1">C</div>
+        <div class="itens s-3 fg-1">D</div>        
+    </div>
+</body>
+</html>
